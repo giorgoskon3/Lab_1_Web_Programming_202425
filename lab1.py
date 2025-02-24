@@ -15,4 +15,7 @@ url = 'http://python.org/'  # προσδιορισμός του url
 with requests.get(url) as response:  # το αντικείμενο response
     html = response.text
     more(html)
-    print|(1)
+
+url = input("Give url:\t")
+
+print(url)
