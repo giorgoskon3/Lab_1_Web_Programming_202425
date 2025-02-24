@@ -24,3 +24,5 @@ print(url)
 
 with requests.get(url) as response:
     print(response.text)
+
+print("hi")
