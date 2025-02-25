@@ -1,4 +1,5 @@
 import requests  # εισαγωγή της βιβλιοθήκης
+from datetime import datetime
 
 def more(text):
     count = 0
@@ -27,3 +28,9 @@ with requests.get(url) as response:
         print(f"{key}:{response.headers[key]}")
         print(f"Server:{response.headers.get('Server')}")
         print(f"Has cookies: {'Set-cookie' in response.headers}")
+    
+    for cookie in response.cookies:
+        print(f"Cookie name: {cookie.name}")
+        print(f"Expires: {datetime.utcfromtimestamp(cookie.expires)}")
+        print(f"Valid for: {datetime.utcfromtimestamp(cookie.expires) - datetime.utcnow()}")
+        
